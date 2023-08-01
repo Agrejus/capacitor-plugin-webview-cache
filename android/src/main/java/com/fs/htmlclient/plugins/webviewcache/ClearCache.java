@@ -7,11 +7,12 @@ public class ClearCache implements Runnable {
     private WebView webView;
 
     public ClearCache(WebView webView) {
-        this.webView = webView;
+      this.webView = webView;
     }
 
     @Override
     public void run() {
-        this.webView.clearCache(true);
+      System.out.println("Clearing WebView Cache");
+      this.webView.clearCache(true);
     }
 }

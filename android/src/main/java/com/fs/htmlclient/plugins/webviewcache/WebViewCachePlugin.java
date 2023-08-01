@@ -15,6 +15,9 @@ public class WebViewCachePlugin extends Plugin {
     @PluginMethod
     public void clearCache(PluginCall call) {
         try {
+
+            System.out.println("HERE");
+
             Activity activity = this.getActivity();
 
             if (activity == null) {
@@ -32,6 +35,8 @@ public class WebViewCachePlugin extends Plugin {
             if (webView == null) {
                 throw new Exception("WebView instance is null!");
             }
+
+            System.out.println("Running on ui thread");
 
             activity.runOnUiThread(new ClearCache(webView));
 
